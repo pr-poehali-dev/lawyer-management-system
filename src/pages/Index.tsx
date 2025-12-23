@@ -4,7 +4,6 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import Icon from '@/components/ui/icon';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -99,12 +98,10 @@ const Index = () => {
           <div className="absolute bottom-6 left-4 right-4">
             <Card className="bg-sidebar-accent border-sidebar-border">
               <CardContent className="p-4">
-                <div className="flex items-center gap-3 mb-3">
-                  <Avatar>
-                    <AvatarFallback className="bg-accent text-accent-foreground font-semibold">
-                      АП
-                    </AvatarFallback>
-                  </Avatar>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent text-accent-foreground font-semibold flex items-center justify-center">
+                    АП
+                  </div>
                   <div>
                     <p className="font-semibold text-sm text-sidebar-foreground">Александр Петров</p>
                     <p className="text-xs text-sidebar-foreground/70">Старший партнёр</p>
@@ -293,11 +290,9 @@ const Index = () => {
                     <CardContent className="p-6">
                       <div className="flex justify-between items-start mb-4">
                         <div className="flex items-center gap-3">
-                          <Avatar className="w-12 h-12">
-                            <AvatarFallback className="bg-accent text-accent-foreground font-semibold text-lg">
-                              {client.name.substring(0, 2).toUpperCase()}
-                            </AvatarFallback>
-                          </Avatar>
+                          <div className="w-12 h-12 rounded-full bg-accent text-accent-foreground font-semibold text-lg flex items-center justify-center">
+                            {client.name.substring(0, 2).toUpperCase()}
+                          </div>
                           <div>
                             <h3 className="font-semibold text-lg">{client.name}</h3>
                             <p className="text-sm text-muted-foreground">{client.contact}</p>
@@ -438,11 +433,9 @@ const Index = () => {
                     ].map((transaction, idx) => (
                       <div key={idx} className="flex items-center justify-between p-4 border rounded-lg">
                         <div className="flex items-center gap-4">
-                          <Avatar>
-                            <AvatarFallback className="bg-accent text-accent-foreground font-semibold">
-                              {transaction.client.substring(0, 2).toUpperCase()}
-                            </AvatarFallback>
-                          </Avatar>
+                          <div className="w-10 h-10 rounded-full bg-accent text-accent-foreground font-semibold flex items-center justify-center">
+                            {transaction.client.substring(0, 2).toUpperCase()}
+                          </div>
                           <div>
                             <p className="font-semibold">{transaction.client}</p>
                             <p className="text-sm text-muted-foreground">{transaction.date}</p>
