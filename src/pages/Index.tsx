@@ -171,7 +171,7 @@ const Index = () => {
                       >
                         <div className="flex justify-between items-start mb-3">
                           <div className="flex-1">
-                            <h4 className="font-semibold text-foreground mb-1">{caseItem.name}</h4>
+                            <h4 className="mx-[35px] my-0 py-[7px] text-orange-700 font-light">{caseItem.name}</h4>
                             <p className="text-sm text-muted-foreground">{caseItem.client}</p>
                           </div>
                           <Badge className={`${getStatusColor(caseItem.status)} text-white`}>
