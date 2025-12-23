@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,7 @@ import { Progress } from '@/components/ui/progress';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('dashboard');
 
   const stats = [
@@ -93,6 +95,13 @@ const Index = () => {
                 <span>{item.label}</span>
               </button>
             ))}
+            <button
+              onClick={() => navigate('/documents')}
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-sidebar-foreground/80 hover:bg-sidebar-accent/50"
+            >
+              <Icon name="FileText" size={20} />
+              <span>Документы</span>
+            </button>
           </nav>
 
           <div className="absolute bottom-6 left-4 right-4">
